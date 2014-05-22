@@ -1,1 +1,1 @@
-web: ./snowflake
+web: snowflakeweb
