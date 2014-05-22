@@ -50,6 +50,7 @@ func main() {
 
 	// start the http server
 	http.HandleFunc("/", handler)
+	http.HandleFunc("/favicon.ico", faviconHandler)
 	fmt.Println("listening...")
 	port := os.Getenv("PORT")
 	err := http.ListenAndServe(":" + port, nil)
@@ -65,4 +66,8 @@ func handler(res http.ResponseWriter, req *http.Request) {
 
 	id := <- responseChannel
 	fmt.Fprintln(res, id)
+}
+
+func faviconHandler(res http.ResponseWriter, req *http.Request) {
+	fmt.Fprintln(res, "")
 }
