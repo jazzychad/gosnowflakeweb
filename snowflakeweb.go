@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
-	"jc/snowflakeweb/snowflake"
+	"github.com/jazzychad/gosnowflake/snowflake"
 )
 
 const workers uint64 = 5
@@ -26,7 +26,7 @@ func startSnowflake(datacenterId uint64, workerId uint64) {
 		fmt.Println(workerId, "handling request")
 
 		// generate id
-		id := s.NextId()
+		id := s.NextID()
 		fmt.Println("id:", id)
 
 		// send the id back on the response channel
